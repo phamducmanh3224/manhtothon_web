@@ -1,0 +1,988 @@
+{
+  "videos": [
+    {
+      "part": 105,
+      "title": "3 cách phối áo khoác dù mùa lạnh",
+      "tiktok": "",
+      "date": "2026-10-27",
+      "style": [
+        "streetwear",
+        "mùa đông"
+      ],
+      "model": {
+        "height": 175,
+        "weight": 70,
+        "gender": "nam"
+      },
+      "thumb": ""
+    },
+    {
+      "part": 104,
+      "title": "Outfit đi cà phê cuối tuần",
+      "tiktok": "",
+      "date": "2026-10-25",
+      "style": [
+        "basic",
+        "hàn quốc"
+      ],
+      "model": {
+        "height": 172,
+        "weight": 63,
+        "gender": "nam"
+      },
+      "thumb": ""
+    },
+    {
+      "part": 103,
+      "title": "Phối đồ đi học cho người gầy",
+      "tiktok": "",
+      "date": "2026-10-22",
+      "style": [
+        "đi học",
+        "basic"
+      ],
+      "model": {
+        "height": 168,
+        "weight": 55,
+        "gender": "nam"
+      },
+      "thumb": ""
+    },
+    {
+      "part": 102,
+      "title": "Set đồ hẹn hò nữ dưới 500k",
+      "tiktok": "",
+      "date": "2026-10-19",
+      "style": [
+        "nữ tính",
+        "hẹn hò"
+      ],
+      "model": {
+        "height": 158,
+        "weight": 47,
+        "gender": "nu"
+      },
+      "thumb": ""
+    }
+  ],
+  "products": [
+    {
+      "id": "p105-01",
+      "part": 105,
+      "look": 1,
+      "name": "Áo khoác dù 2 lớp chống gió màu đen",
+      "category": "ao",
+      "gender": "nam",
+      "price": 259000,
+      "image": "",
+      "shopee": "https://shopee.vn/",
+      "sizes": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "fit": {
+        "height": [
+          165,
+          188
+        ],
+        "weight": [
+          58,
+          90
+        ]
+      },
+      "style": [
+        "streetwear",
+        "mùa đông"
+      ],
+      "sizeChart": [
+        {
+          "size": "M",
+          "height": [
+            163,
+            172
+          ],
+          "weight": [
+            54,
+            63
+          ]
+        },
+        {
+          "size": "L",
+          "height": [
+            170,
+            178
+          ],
+          "weight": [
+            62,
+            72
+          ]
+        },
+        {
+          "size": "XL",
+          "height": [
+            175,
+            185
+          ],
+          "weight": [
+            70,
+            82
+          ]
+        },
+        {
+          "size": "XXL",
+          "height": [
+            178,
+            190
+          ],
+          "weight": [
+            80,
+            95
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p105-02",
+      "part": 105,
+      "look": 1,
+      "name": "Quần jogger nỉ bo gấu xám",
+      "category": "quan",
+      "gender": "nam",
+      "price": 179000,
+      "image": "",
+      "shopee": "https://shopee.vn/",
+      "sizes": [
+        "29",
+        "30",
+        "31",
+        "32",
+        "34"
+      ],
+      "fit": {
+        "height": [
+          163,
+          185
+        ],
+        "weight": [
+          54,
+          85
+        ]
+      },
+      "style": [
+        "streetwear",
+        "mùa đông"
+      ],
+      "sizeChart": [
+        {
+          "size": "29",
+          "height": [
+            162,
+            170
+          ],
+          "weight": [
+            54,
+            60
+          ]
+        },
+        {
+          "size": "30",
+          "height": [
+            165,
+            174
+          ],
+          "weight": [
+            59,
+            65
+          ]
+        },
+        {
+          "size": "31",
+          "height": [
+            168,
+            177
+          ],
+          "weight": [
+            64,
+            70
+          ]
+        },
+        {
+          "size": "32",
+          "height": [
+            170,
+            180
+          ],
+          "weight": [
+            69,
+            76
+          ]
+        },
+        {
+          "size": "34",
+          "height": [
+            172,
+            185
+          ],
+          "weight": [
+            75,
+            85
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p105-03",
+      "part": 105,
+      "look": 1,
+      "name": "Giày chunky đế dày màu kem",
+      "category": "giay",
+      "gender": "unisex",
+      "price": 395000,
+      "image": "",
+      "shopee": "https://shopee.vn/",
+      "sizes": [
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
+      ],
+      "fit": null,
+      "style": [
+        "streetwear",
+        "mùa đông"
+      ]
+    },
+    {
+      "id": "p105-04",
+      "part": 105,
+      "look": 2,
+      "name": "Áo hoodie oversize in chữ nhỏ",
+      "category": "ao",
+      "gender": "nam",
+      "price": 219000,
+      "image": "",
+      "shopee": "https://shopee.vn/",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "fit": {
+        "height": [
+          163,
+          182
+        ],
+        "weight": [
+          54,
+          80
+        ]
+      },
+      "style": [
+        "streetwear",
+        "mùa đông"
+      ],
+      "sizeChart": [
+        {
+          "size": "M",
+          "height": [
+            163,
+            172
+          ],
+          "weight": [
+            54,
+            63
+          ]
+        },
+        {
+          "size": "L",
+          "height": [
+            170,
+            178
+          ],
+          "weight": [
+            62,
+            72
+          ]
+        },
+        {
+          "size": "XL",
+          "height": [
+            175,
+            185
+          ],
+          "weight": [
+            70,
+            82
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p105-05",
+      "part": 105,
+      "look": 2,
+      "name": "Mũ len beanie gập gấu",
+      "category": "phukien",
+      "gender": "unisex",
+      "price": 59000,
+      "image": "",
+      "shopee": "https://shopee.vn/",
+      "sizes": [],
+      "fit": null,
+      "style": [
+        "streetwear",
+        "mùa đông"
+      ]
+    },
+    {
+      "id": "p104-01",
+      "part": 104,
+      "look": 1,
+      "name": "Áo polo cổ V len tăm màu kem",
+      "category": "ao",
+      "gender": "nam",
+      "price": 189000,
+      "image": "",
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "fit": {
+        "height": [
+          160,
+          182
+        ],
+        "weight": [
+          50,
+          78
+        ]
+      },
+      "style": [
+        "basic",
+        "hàn quốc"
+      ],
+      "shopee": "https://shopee.vn/",
+      "sizeChart": [
+        {
+          "size": "M",
+          "height": [
+            163,
+            172
+          ],
+          "weight": [
+            54,
+            63
+          ]
+        },
+        {
+          "size": "L",
+          "height": [
+            170,
+            178
+          ],
+          "weight": [
+            62,
+            72
+          ]
+        },
+        {
+          "size": "XL",
+          "height": [
+            175,
+            185
+          ],
+          "weight": [
+            70,
+            82
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p104-02",
+      "part": 104,
+      "look": 1,
+      "name": "Quần tây ống suông xám nhạt",
+      "category": "quan",
+      "gender": "nam",
+      "price": 245000,
+      "image": "",
+      "sizes": [
+        "29",
+        "30",
+        "31",
+        "32"
+      ],
+      "fit": {
+        "height": [
+          165,
+          185
+        ],
+        "weight": [
+          55,
+          80
+        ]
+      },
+      "style": [
+        "basic",
+        "hàn quốc"
+      ],
+      "shopee": "https://shopee.vn/",
+      "sizeChart": [
+        {
+          "size": "29",
+          "height": [
+            162,
+            170
+          ],
+          "weight": [
+            54,
+            60
+          ]
+        },
+        {
+          "size": "30",
+          "height": [
+            165,
+            174
+          ],
+          "weight": [
+            59,
+            65
+          ]
+        },
+        {
+          "size": "31",
+          "height": [
+            168,
+            177
+          ],
+          "weight": [
+            64,
+            70
+          ]
+        },
+        {
+          "size": "32",
+          "height": [
+            170,
+            180
+          ],
+          "weight": [
+            69,
+            76
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p104-03",
+      "part": 104,
+      "look": 1,
+      "name": "Giày Onitsuka Tiger Mexico 66 White Light Sage",
+      "category": "giay",
+      "gender": "unisex",
+      "price": 1890000,
+      "image": "",
+      "sizes": [
+        "39",
+        "40",
+        "41",
+        "42",
+        "43"
+      ],
+      "fit": null,
+      "style": [
+        "basic"
+      ],
+      "shopee": "https://shopee.vn/"
+    },
+    {
+      "id": "p104-04",
+      "part": 104,
+      "look": 1,
+      "name": "Đồng hồ nam Casio dây kim loại mặt trắng",
+      "category": "phukien",
+      "gender": "nam",
+      "price": 820000,
+      "image": "",
+      "sizes": [],
+      "fit": null,
+      "style": [
+        "basic"
+      ],
+      "shopee": "https://shopee.vn/"
+    },
+    {
+      "id": "p104-05",
+      "part": 104,
+      "look": 2,
+      "name": "Áo sơ mi oxford trắng form rộng",
+      "category": "ao",
+      "gender": "nam",
+      "price": 210000,
+      "image": "",
+      "sizes": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "fit": {
+        "height": [
+          165,
+          185
+        ],
+        "weight": [
+          55,
+          85
+        ]
+      },
+      "style": [
+        "basic",
+        "đi làm"
+      ],
+      "shopee": "https://shopee.vn/",
+      "sizeChart": [
+        {
+          "size": "M",
+          "height": [
+            163,
+            172
+          ],
+          "weight": [
+            54,
+            63
+          ]
+        },
+        {
+          "size": "L",
+          "height": [
+            170,
+            178
+          ],
+          "weight": [
+            62,
+            72
+          ]
+        },
+        {
+          "size": "XL",
+          "height": [
+            175,
+            185
+          ],
+          "weight": [
+            70,
+            82
+          ]
+        },
+        {
+          "size": "XXL",
+          "height": [
+            178,
+            190
+          ],
+          "weight": [
+            80,
+            95
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p104-06",
+      "part": 104,
+      "look": 2,
+      "name": "Quần jeans xanh nhạt ống đứng",
+      "category": "quan",
+      "gender": "nam",
+      "price": 299000,
+      "image": "",
+      "sizes": [
+        "28",
+        "29",
+        "30",
+        "31",
+        "32",
+        "34"
+      ],
+      "fit": {
+        "height": [
+          160,
+          183
+        ],
+        "weight": [
+          50,
+          82
+        ]
+      },
+      "style": [
+        "basic"
+      ],
+      "shopee": "https://shopee.vn/",
+      "sizeChart": [
+        {
+          "size": "28",
+          "height": [
+            158,
+            168
+          ],
+          "weight": [
+            48,
+            55
+          ]
+        },
+        {
+          "size": "29",
+          "height": [
+            162,
+            170
+          ],
+          "weight": [
+            54,
+            60
+          ]
+        },
+        {
+          "size": "30",
+          "height": [
+            165,
+            174
+          ],
+          "weight": [
+            59,
+            65
+          ]
+        },
+        {
+          "size": "31",
+          "height": [
+            168,
+            177
+          ],
+          "weight": [
+            64,
+            70
+          ]
+        },
+        {
+          "size": "32",
+          "height": [
+            170,
+            180
+          ],
+          "weight": [
+            69,
+            76
+          ]
+        },
+        {
+          "size": "34",
+          "height": [
+            172,
+            185
+          ],
+          "weight": [
+            75,
+            85
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p103-01",
+      "part": 103,
+      "look": 1,
+      "name": "Áo thun cotton dày dáng boxy màu đen",
+      "category": "ao",
+      "gender": "nam",
+      "price": 129000,
+      "image": "",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "fit": {
+        "height": [
+          158,
+          175
+        ],
+        "weight": [
+          45,
+          62
+        ]
+      },
+      "style": [
+        "đi học",
+        "basic"
+      ],
+      "shopee": "https://shopee.vn/",
+      "sizeChart": [
+        {
+          "size": "S",
+          "height": [
+            155,
+            165
+          ],
+          "weight": [
+            45,
+            55
+          ]
+        },
+        {
+          "size": "M",
+          "height": [
+            163,
+            172
+          ],
+          "weight": [
+            54,
+            63
+          ]
+        },
+        {
+          "size": "L",
+          "height": [
+            170,
+            178
+          ],
+          "weight": [
+            62,
+            72
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p103-02",
+      "part": 103,
+      "look": 1,
+      "name": "Quần kaki túi hộp màu be",
+      "category": "quan",
+      "gender": "nam",
+      "price": 199000,
+      "image": "",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "fit": {
+        "height": [
+          158,
+          176
+        ],
+        "weight": [
+          45,
+          65
+        ]
+      },
+      "style": [
+        "đi học"
+      ],
+      "shopee": "https://shopee.vn/",
+      "sizeChart": []
+    },
+    {
+      "id": "p103-03",
+      "part": 103,
+      "look": 1,
+      "name": "Giày sneaker canvas cổ thấp trắng",
+      "category": "giay",
+      "gender": "unisex",
+      "price": 259000,
+      "image": "",
+      "sizes": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42"
+      ],
+      "fit": null,
+      "style": [
+        "đi học",
+        "basic"
+      ],
+      "shopee": "https://shopee.vn/"
+    },
+    {
+      "id": "p103-04",
+      "part": 103,
+      "look": 1,
+      "name": "Balo vải canvas đi học chống nước",
+      "category": "phukien",
+      "gender": "unisex",
+      "price": 175000,
+      "image": "",
+      "sizes": [],
+      "fit": null,
+      "style": [
+        "đi học"
+      ],
+      "shopee": "https://shopee.vn/"
+    },
+    {
+      "id": "p102-01",
+      "part": 102,
+      "look": 1,
+      "name": "Áo croptop len gân cổ vuông",
+      "category": "ao",
+      "gender": "nu",
+      "price": 149000,
+      "image": "",
+      "sizes": [
+        "S",
+        "M"
+      ],
+      "fit": {
+        "height": [
+          150,
+          165
+        ],
+        "weight": [
+          40,
+          55
+        ]
+      },
+      "style": [
+        "nữ tính",
+        "hẹn hò"
+      ],
+      "shopee": "https://shopee.vn/",
+      "sizeChart": [
+        {
+          "size": "S",
+          "height": [
+            148,
+            158
+          ],
+          "weight": [
+            38,
+            46
+          ]
+        },
+        {
+          "size": "M",
+          "height": [
+            155,
+            163
+          ],
+          "weight": [
+            45,
+            52
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p102-02",
+      "part": 102,
+      "look": 1,
+      "name": "Chân váy chữ A dáng ngắn kẻ caro",
+      "category": "quan",
+      "gender": "nu",
+      "price": 165000,
+      "image": "",
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "fit": {
+        "height": [
+          150,
+          168
+        ],
+        "weight": [
+          40,
+          58
+        ]
+      },
+      "style": [
+        "nữ tính",
+        "hẹn hò"
+      ],
+      "shopee": "https://shopee.vn/",
+      "sizeChart": [
+        {
+          "size": "S",
+          "height": [
+            148,
+            158
+          ],
+          "weight": [
+            38,
+            46
+          ]
+        },
+        {
+          "size": "M",
+          "height": [
+            155,
+            163
+          ],
+          "weight": [
+            45,
+            52
+          ]
+        },
+        {
+          "size": "L",
+          "height": [
+            160,
+            168
+          ],
+          "weight": [
+            51,
+            58
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p102-03",
+      "part": 102,
+      "look": 1,
+      "name": "Giày cao gót nữ quai ngang phối khóa",
+      "category": "giay",
+      "gender": "nu",
+      "price": 320000,
+      "image": "",
+      "sizes": [
+        "35",
+        "36",
+        "37",
+        "38"
+      ],
+      "fit": null,
+      "style": [
+        "nữ tính",
+        "hẹn hò"
+      ],
+      "shopee": "https://shopee.vn/"
+    },
+    {
+      "id": "p102-04",
+      "part": 102,
+      "look": 1,
+      "name": "Túi kẹp nách da mềm màu kem",
+      "category": "phukien",
+      "gender": "nu",
+      "price": 189000,
+      "image": "",
+      "sizes": [],
+      "fit": null,
+      "style": [
+        "nữ tính"
+      ],
+      "shopee": "https://shopee.vn/"
+    }
+  ]
+}

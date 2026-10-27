@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Manhtothon – Tìm đồ trong video TikTok</title>
+<meta name="description" content="Tìm link Shopee của đồ trong video Manhtothon theo phần, danh mục, size, chiều cao và cân nặng.">
+<meta property="og:title" content="Manhtothon – Tìm đồ trong video TikTok">
+<meta property="og:description" content="Gõ số phần trong video để ra ngay link mua.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,800&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="wrap brand">
+  <h1>MANHTOTHON<span>.</span></h1>
+  <p>Đồ trong video, gõ số phần là ra link mua</p>
+</header>
+
+<div class="wrap">
+  <section class="hero" aria-labelledby="heroTitle">
+    <h2 id="heroTitle">Hôm nay mặc gì?</h2>
+    <div class="search" role="search">
+      <label class="q" for="q">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Tên đồ, số phần…" autocomplete="off" enterkeyhint="search">
+      </label>
+      <select id="part" aria-label="Tìm theo phần"><option value="">Tìm theo phần</option></select>
+    </div>
+    <form class="ask" id="askForm" autocomplete="off">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg>
+      <label class="sr" for="ask">Hỏi mặc gì</label>
+      <input id="ask" type="text" placeholder="1m70, 60kg đi học mặc gì?" enterkeyhint="go">
+      <button type="submit">Gợi ý</button>
+    </form>
+    <div class="prompts" id="prompts"></div>
+    <div class="try" id="tryRow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h0"/></svg><span>Thử:</span><div class="try-chips" id="tryChips"></div></div>
+    <div class="ask-result" id="askResult" hidden></div>
+  </section>
+</div>
+
+<div class="bar" id="bar">
+  <div class="wrap">
+    <div class="chips" id="cats"></div>
+  </div>
+</div>
+
+<div class="wrap">
+    <section class="body-box" id="fit" aria-labelledby="fitTitle">
+      <div class="body-head">
+        <svg class="body-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="4.5" r="2.2"/><path d="M8 22v-7l-2-1 1-6h10l1 6-2 1v7"/><path d="M12 15v7"/></svg>
+        <div>
+          <h2 id="fitTitle">Tìm đồ theo dáng người</h2>
+          <p id="fitSub">Nhập chiều cao, cân nặng để xem đồ vừa với bạn và size nên chọn</p>
+        </div>
+      </div>
+      <div class="seg" id="genderSeg" role="radiogroup" aria-label="Giới tính">
+        <button type="button" role="radio" data-g="" aria-checked="true">Tất cả</button>
+        <button type="button" role="radio" data-g="nam" aria-checked="false">Nam</button>
+        <button type="button" role="radio" data-g="nu" aria-checked="false">Nữ</button>
+      </div>
+      <input type="hidden" id="gender">
+      <div class="fit-row two">
+        <label class="field big"><span>Chiều cao</span>
+          <span class="unit"><input id="height" type="number" inputmode="numeric" min="130" max="210" placeholder="170"><i>cm</i></span>
+        </label>
+        <label class="field big"><span>Cân nặng</span>
+          <span class="unit"><input id="weight" type="number" inputmode="numeric" min="30" max="150" placeholder="60"><i>kg</i></span>
+        </label>
+      </div>
+      <details class="size-more" id="sizeMore">
+        <summary>Lọc thêm theo size <span class="muted">(không bắt buộc)</span></summary>
+        <div class="sizes" id="sizes"></div>
+      </details>
+      <div class="fit-foot">
+        <span>Giày và phụ kiện luôn hiện vì không phụ thuộc dáng người.</span>
+        <button class="linkbtn" type="button" id="clearFit" hidden>Xoá dáng người</button>
+      </div>
+    </section>
+    <div class="toolbar">
+      <p class="summary" id="summary"></p>
+      <button class="linkbtn" type="button" id="clearAll" hidden>Xoá lọc</button>
+      <label class="sort"><span class="sr">Sắp xếp</span>
+        <select id="sort"><option value="new">Mới nhất</option><option value="low">Giá thấp → cao</option><option value="high">Giá cao → thấp</option></select>
+      </label>
+    </div>
+</div>
+
+<main class="wrap" id="results"></main>
+
+<footer class="wrap">
+  Trang có chứa link tiếp thị liên kết (affiliate). Bạn mua qua link, giá không đổi và Manhtothon nhận một khoản hoa hồng nhỏ.
+</footer>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-panel" id="sheetPanel" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+    <button class="sheet-close" type="button" id="sheetClose" aria-label="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div id="sheetBody"></div>
+  </div>
+</div>
+<button class="to-top" type="button" id="toTop" hidden aria-label="Lên đầu trang"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg></button>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

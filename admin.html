@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Quản lý sản phẩm – Manhtothon</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .admin { padding-block: 20px 60px; display: grid; gap: 18px; }
+  .admin h1 { margin: 0; font-size: 22px; }
+  .box { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; display: grid; gap: 12px; }
+  .box h2 { margin: 0; font-size: 16px; }
+  .form { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+  .form .wide { grid-column: 1 / -1; }
+  .form textarea { min-height: 90px; font: 14px/1.5 var(--body); }
+  .actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .actions button { border: 1.5px solid var(--ink); border-radius: 10px; padding: 8px 14px; background: var(--card); font-weight: 600; cursor: pointer; }
+  .actions button.primary { background: var(--ink); color: var(--on-ink); }
+  .tbl { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  td.n { white-space: normal; min-width: 200px; }
+  td button { border: 0; background: none; text-decoration: underline; cursor: pointer; padding: 0 4px; font-size: 13px; }
+  .note { color: var(--muted); font-size: 13px; margin: 0; }
+  #msg { font-weight: 600; font-size: 13px; }
+  textarea { width: 100%; min-height: 160px; font: 12px/1.4 ui-monospace, monospace; border: 1.5px solid var(--line); border-radius: 10px; padding: 8px; background: var(--paper); color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap admin">
+  <h1>Quản lý sản phẩm</h1>
+  <p class="note">Trang này chỉ sửa dữ liệu trên máy bạn. Sửa xong bấm <b>Tải products.json</b>, rồi thay file <code>data/products.json</code> trên GitHub (hoặc nơi bạn host) là web cập nhật.</p>
+
+  <section class="box">
+    <h2 id="formTitle">Thêm sản phẩm</h2>
+    <form class="form" id="form">
+      <label class="field"><span>Phần</span><input id="f-part" type="number" required placeholder="104"></label>
+      <label class="field"><span>Ảnh số</span><input id="f-look" type="number" value="1" min="1"></label>
+      <label class="field"><span>Danh mục</span>
+        <select id="f-category"><option value="ao">Áo</option><option value="quan">Quần / váy</option><option value="giay">Giày</option><option value="phukien">Phụ kiện</option></select></label>
+      <label class="field"><span>Giới tính</span>
+        <select id="f-gender"><option value="nam">Nam</option><option value="nu">Nữ</option><option value="unisex">Unisex</option></select></label>
+      <label class="field wide"><span>Tên sản phẩm</span><input id="f-name" required></label>
+      <label class="field wide"><span>Link ảnh (copy địa chỉ ảnh trên Shopee)</span><input id="f-image" type="url" placeholder="https://..."></label>
+      <label class="field wide"><span>Link Shopee affiliate</span><input id="f-shopee" type="url" required placeholder="https://s.shopee.vn/..."></label>
+      <label class="field"><span>Giá (đ)</span><input id="f-price" type="number" placeholder="199000"></label>
+      <label class="field"><span>Size (cách nhau dấu phẩy)</span><input id="f-sizes" placeholder="M, L, XL"></label>
+      <label class="field"><span>Cao từ (cm)</span><input id="f-hmin" type="number" placeholder="160"></label>
+      <label class="field"><span>Cao đến (cm)</span><input id="f-hmax" type="number" placeholder="180"></label>
+      <label class="field"><span>Nặng từ (kg)</span><input id="f-wmin" type="number" placeholder="50"></label>
+      <label class="field"><span>Nặng đến (kg)</span><input id="f-wmax" type="number" placeholder="75"></label>
+      <label class="field wide"><span>Style (cách nhau dấu phẩy)</span><input id="f-style" placeholder="basic, đi học"></label>
+      <label class="field wide"><span>Bảng size để gợi ý size (mỗi dòng: size chiều-cao cân-nặng)</span><textarea id="f-chart" rows="4" placeholder="M 163-172 54-63
+L 170-178 62-72"></textarea></label>
+      <div class="actions wide">
+        <button class="primary" type="submit" id="saveBtn">Thêm vào danh sách</button>
+        <button type="button" id="cancelEdit" hidden>Huỷ sửa</button>
+        <span id="msg"></span>
+      </div>
+    </form>
+  </section>
+
+  <section class="box">
+    <h2>Thông tin video theo phần</h2>
+    <form class="form" id="vform">
+      <label class="field"><span>Phần</span><input id="v-part" type="number" required></label>
+      <label class="field wide"><span>Tiêu đề video</span><input id="v-title"></label>
+      <label class="field wide"><span>Link video TikTok</span><input id="v-tiktok" type="url"></label>
+      <label class="field"><span>Mẫu cao (cm)</span><input id="v-h" type="number"></label>
+      <label class="field"><span>Mẫu nặng (kg)</span><input id="v-w" type="number"></label>
+      <label class="field"><span>Mẫu giới tính</span><select id="v-g"><option value="nam">Nam</option><option value="nu">Nữ</option></select></label>
+      <label class="field wide"><span>Style (cách nhau dấu phẩy)</span><input id="v-style"></label>
+      <div class="actions wide"><button class="primary" type="submit">Lưu thông tin video</button></div>
+    </form>
+  </section>
+
+  <section class="box">
+    <h2>Danh sách (<span id="cnt">0</span>)</h2>
+    <div class="actions">
+      <button class="primary" type="button" id="download">Tải products.json</button>
+      <button type="button" id="copy">Copy JSON</button>
+      <button type="button" id="preview">Xem trang chính với dữ liệu này</button>
+      <button type="button" id="reset">Bỏ nháp, tải lại dữ liệu đang trên web</button>
+    </div>
+    <div class="tbl"><table><thead><tr><th>Phần</th><th>Ảnh</th><th>Tên</th><th>Giá</th><th>Link</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+    <details><summary class="note">Sửa JSON trực tiếp</summary><textarea id="raw" spellcheck="false"></textarea>
+      <div class="actions"><button type="button" id="applyRaw">Áp dụng JSON</button></div></details>
+  </section>
+</div>
+<script>
+(function () {
+  var KEY = "mt-admin-draft";
+  var data = { videos: [], products: [] }, editing = null;
+  var $ = function (id) { return document.getElementById(id); };
+  function msg(t) { $("msg").textContent = t; setTimeout(function () { if ($("msg").textContent === t) $("msg").textContent = ""; }, 2500); }
+  function list(s) { return String(s || "").split(",").map(function (x) { return x.trim(); }).filter(Boolean); }
+  function num(id) { var v = parseFloat($(id).value); return isNaN(v) ? null : v; }
+  function chart() {
+    return $("f-chart").value.split("\n").map(function (line) {
+      var m = line.trim().split(/\s+/);
+      if (!m[0]) return null;
+      function rng(x) { var r = (x || "").split("-").map(Number); return r.length === 2 && r[0] && r[1] ? r : null; }
+      return { size: m[0], height: rng(m[1]), weight: rng(m[2]) };
+    }).filter(Boolean);
+  }
+  function persist() { try { localStorage.setItem(KEY, JSON.stringify(data)); } catch (e) {} }
+  function json() { return JSON.stringify(data, null, 2); }
+
+  function render() {
+    data.products.sort(function (a, b) { return b.part - a.part || (a.look || 1) - (b.look || 1); });
+    $("cnt").textContent = data.products.length;
+    $("rows").innerHTML = data.products.map(function (p, i) {
+      var l = p.shopee ? "Shopee" : "thiếu link";
+      return "<tr><td>" + p.part + "</td><td>" + (p.look || 1) + '</td><td class="n">' + p.name.replace(/</g, "&lt;") + "</td><td>" + (p.price || "") + "</td><td>" + l +
+        '</td><td><button data-edit="' + i + '">Sửa</button><button data-del="' + i + '">Xoá</button></td></tr>';
+    }).join("");
+    $("raw").value = json();
+    persist();
+  }
+
+  function fill(p) {
+    $("f-part").value = p.part; $("f-look").value = p.look || 1; $("f-category").value = p.category; $("f-gender").value = p.gender || "unisex";
+    $("f-name").value = p.name; $("f-image").value = p.image || ""; $("f-shopee").value = p.shopee || (p.links && p.links.shopee) || "";
+    $("f-chart").value = (p.sizeChart || []).map(function (c) { return c.size + " " + (c.height ? c.height.join("-") : "-") + " " + (c.weight ? c.weight.join("-") : "-"); }).join("\n");
+    $("f-price").value = p.price || ""; $("f-sizes").value = (p.sizes || []).join(", "); $("f-style").value = (p.style || []).join(", ");
+    $("f-hmin").value = p.fit && p.fit.height ? p.fit.height[0] : ""; $("f-hmax").value = p.fit && p.fit.height ? p.fit.height[1] : "";
+    $("f-wmin").value = p.fit && p.fit.weight ? p.fit.weight[0] : ""; $("f-wmax").value = p.fit && p.fit.weight ? p.fit.weight[1] : "";
+  }
+
+  $("form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var part = num("f-part"), look = num("f-look") || 1;
+    var fit = {};
+    if (num("f-hmin") != null || num("f-hmax") != null) fit.height = [num("f-hmin") || 0, num("f-hmax") || 300];
+    if (num("f-wmin") != null || num("f-wmax") != null) fit.weight = [num("f-wmin") || 0, num("f-wmax") || 300];
+    var p = {
+      id: editing != null ? data.products[editing].id : "p" + part + "-" + Date.now().toString(36),
+      part: part, look: look, name: $("f-name").value.trim(), category: $("f-category").value, gender: $("f-gender").value,
+      price: num("f-price"), image: $("f-image").value.trim(),
+      shopee: $("f-shopee").value.trim(), sizeChart: chart(),
+      sizes: list($("f-sizes").value), fit: Object.keys(fit).length ? fit : null, style: list($("f-style").value)
+    };
+    if (!p.sizeChart.length) delete p.sizeChart;
+    if (editing != null) { data.products[editing] = p; msg("Đã cập nhật"); }
+    else { data.products.push(p); msg("Đã thêm"); }
+    var keepPart = part, keepLook = look;
+    editing = null; $("form").reset(); $("f-part").value = keepPart; $("f-look").value = keepLook;
+    $("formTitle").textContent = "Thêm sản phẩm"; $("saveBtn").textContent = "Thêm vào danh sách"; $("cancelEdit").hidden = true;
+    render();
+  });
+  $("cancelEdit").addEventListener("click", function () {
+    editing = null; $("form").reset(); $("formTitle").textContent = "Thêm sản phẩm"; $("saveBtn").textContent = "Thêm vào danh sách"; this.hidden = true;
+  });
+  $("rows").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    if (b.dataset.edit != null) {
+      editing = +b.dataset.edit; fill(data.products[editing]);
+      $("formTitle").textContent = "Sửa sản phẩm"; $("saveBtn").textContent = "Lưu thay đổi"; $("cancelEdit").hidden = false;
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (b.dataset.del != null) {
+      if (b.textContent !== "Chắc chắn?") { b.textContent = "Chắc chắn?"; return; }
+      data.products.splice(+b.dataset.del, 1); render();
+    }
+  });
+
+  $("v-part").addEventListener("change", function () {
+    var v = data.videos.filter(function (x) { return x.part == $("v-part").value; })[0];
+    if (!v) return;
+    $("v-title").value = v.title || ""; $("v-tiktok").value = v.tiktok || ""; $("v-style").value = (v.style || []).join(", ");
+    $("v-h").value = v.model && v.model.height || ""; $("v-w").value = v.model && v.model.weight || ""; $("v-g").value = v.model && v.model.gender || "nam";
+  });
+  $("vform").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var part = num("v-part");
+    var v = { part: part, title: $("v-title").value.trim(), tiktok: $("v-tiktok").value.trim(), date: new Date().toISOString().slice(0, 10),
+      style: list($("v-style").value), model: { height: num("v-h"), weight: num("v-w"), gender: $("v-g").value } };
+    var i = data.videos.findIndex(function (x) { return x.part === part; });
+    if (i >= 0) { v.date = data.videos[i].date || v.date; data.videos[i] = v; } else data.videos.push(v);
+    data.videos.sort(function (a, b) { return b.part - a.part; });
+    render(); msg("Đã lưu video phần " + part);
+  });
+
+  $("download").addEventListener("click", function () {
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([json()], { type: "application/json" }));
+    a.download = "products.json"; a.click();
+  });
+  $("copy").addEventListener("click", function () {
+    navigator.clipboard.writeText(json()).then(function () { msg("Đã copy"); }, function () { $("raw").select(); msg("Hãy copy trong ô JSON"); });
+  });
+  $("preview").addEventListener("click", function () {
+    try { sessionStorage.setItem("mt-preview", json()); } catch (e) {}
+    window.open("index.html?preview=1", "_blank");
+  });
+  $("applyRaw").addEventListener("click", function () {
+    try { data = JSON.parse($("raw").value); render(); msg("Đã áp dụng"); } catch (e) { msg("JSON bị lỗi: " + e.message); }
+  });
+
+  $("reset").addEventListener("click", function () {
+    if (this.textContent !== "Bấm lần nữa để xác nhận") { this.textContent = "Bấm lần nữa để xác nhận"; return; }
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    location.reload();
+  });
+  var draft = null;
+  try { draft = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
+  if (draft) { data = draft; render(); }
+  else fetch("data/products.json", { cache: "no-cache" }).then(function (r) { return r.json(); }).then(function (d) { data = d; render(); }).catch(render);
+})();
+</script>
+</body>
+</html>
